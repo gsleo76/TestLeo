@@ -1,0 +1,8 @@
+//Conteggio Ticket in target
+$sql = "{call UpdatePA_TicketTarget(?)}";
+$params = array(&$targetdiconfronto);
+//$sql_query = "SELECT targetdiconfronto FROM TAB_ParamPA";
+$result = sqlsrv_query($conn, $sql, $params);
+$row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
+$countTktnTarget = $row[0];
+
