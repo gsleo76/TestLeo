@@ -6,3 +6,4 @@ $result = sqlsrv_query($conn, $sql, $params);
 $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
 $countTktnTarget = $row[0];
 
+Warning: sqlsrv_fetch_array() expects parameter 1 to be resource, boolean given in C:\xampp\htdocs\f4_vs02\html\partials\dashboard.php on line 120
