@@ -7,3 +7,16 @@ $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
 $countTktnTarget = $row[0];
 
 Warning: sqlsrv_fetch_array() expects parameter 1 to be resource, boolean given in C:\xampp\htdocs\f4_vs02\html\partials\dashboard.php on line 120
+
+
+//Conteggio Ticket in target
+$id=1;
+$sql = "Exec UpdatePA_TicketTarget @id";
+$params = array($id, SQLSRV_PARAM_OUT);
+//$sql_query = "SELECT targetdiconfronto FROM TAB_ParamPA";
+$result = sqlsrv_query($conn, $sql, $params);
+while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
+{
+echo $row["targetdiconfronto"];
+}
+//$countTktnTarget = $row[0];
